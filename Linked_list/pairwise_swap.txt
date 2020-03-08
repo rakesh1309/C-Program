@@ -1,0 +1,19 @@
+PAIRWISESWAP::		EG 1->2->3->4  OUTPUT: 2->1->4->3
+
+
+void pairWiseSwap(struct node* head) 
+{ 
+    if (head != NULL && head->next != NULL) { 
+  
+        swap(&head->data, &head->next->data); 
+  
+        pairWiseSwap(head->next->next); 
+    } 
+} 
+void swap(int* a, int* b) 
+{ 
+    int temp; 
+    temp = *a; 
+    *a = *b; 
+    *b = temp; 
+} 
